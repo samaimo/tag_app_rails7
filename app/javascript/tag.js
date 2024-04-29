@@ -11,6 +11,14 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
       XHR.onload = () => {
         // console.log("非同期通信成功");
         const tagName = XHR.response.keyword;
+        const searchResult = document.getElementById("search-result");
+        tagName.forEach((tag) => {
+          const childElement = document.createElement("div");
+          childElement.setAttribute("class", "child");
+          childElement.setAttribute("id", tag.id);
+          childElement.innerHTML = tag.tag_name;
+          searchResult.appendChild(childElement);
+        });
       };
     });
   };
