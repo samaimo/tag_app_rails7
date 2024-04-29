@@ -8,6 +8,9 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
       XHR.open("GET", `/posts/search/?keyword=${keyword}`, true);
       XHR.responseType = "json";
       XHR.send();
+      XHR.onload = () => {
+        console.log("非同期通信成功");
+      };
     });
   };
 });
