@@ -18,6 +18,11 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
           childElement.setAttribute("id", tag.id);
           childElement.innerHTML = tag.tag_name;
           searchResult.appendChild(childElement);
+          const clickElement = document.getElementById(tag.id);
+          clickElement.addEventListener("click",() => {
+            document.getElementById("post_form_tag_name").value = clickElement. clickElement.textContent;
+            clickElement.remove();
+          });
         });
       };
     });
