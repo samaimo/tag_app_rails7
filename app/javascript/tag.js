@@ -9,7 +9,6 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
-        // console.log("非同期通信成功");
         const tagName = XHR.response.keyword;
         const searchResult = document.getElementById("search-result");
         searchResult.innerHTML = "";
@@ -17,7 +16,7 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
           const childElement = document.createElement("div");
           childElement.setAttribute("class", "child");
           childElement.setAttribute("id", tag.id);
-          childElement.innerHTML = tag.name;
+          childElement.innerHTML = tag.tag_name;
           searchResult.appendChild(childElement);
           const clickElement = document.getElementById(tag.id);
           clickElement.addEventListener("click", () => {
