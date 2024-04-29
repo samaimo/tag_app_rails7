@@ -9,7 +9,8 @@ const tagNameInput = document.querySelector("#post_form_tag_name");
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
-        console.log("非同期通信成功");
+        // console.log("非同期通信成功");
+        const tagName = XHR.response.keyword;
       };
     });
   };
